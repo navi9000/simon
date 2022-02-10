@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Norican, cursive;
+}
+
+body {
+  background-color: #222222;
+}
+
+li {
+  list-style-type: none;
+}
+
+.game-screen {
+  margin: 50px auto;
+  border-radius: 20px;
+  background-image: linear-gradient(180deg, #3967e6 0%, white 100%);
+  max-width: 960px;
+  min-height: 640px;
+}
+
+.start-page {
+  position: relative;
+}
+
+.start-page__header {
+  position: absolute;
+  top: 175px;
+  left: 75px;
+  font-size: 6em;
+  color: #c40c21;
+  cursor: default;
+  text-align: initial;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 7.5em;
+  text-decoration: underline;
+  transform-origin: top left;
+  transform: rotate(-14deg);
+  animation: drawText 5s steps(60, end), underlineText 8s;
+}
+
+.start-page__button {
+  position: absolute;
+  top: 375px;
+  right: 175px;
+  cursor: pointer;
+  font-family: Norican, cursive;
+  color: #c40c21;
+  background-color: transparent;
+  border: none;
+  font-size: 4em;
+}
+
+.start-page__button:hover {
+  text-decoration: underline;
+}
+
+@keyframes drawText {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes underlineText {
+  0% {
+    text-decoration: none;
+  }
+  75% {
+    text-decoration: none;
+  }
+}
+
+.title-enter-from {
+  opacity: 0;
+}
+
+.title-enter-active {
+  transition: opacity 1s ease;
+}
+
+.title-enter-to {
+  opacity: 1;
+}
+
+.settings {
+  text-align: center;
+  color: #c40c21;
+}
+
+.settings__form {
+  padding-top: 150px;
+}
+
+.settings__text {
+  font-size: 4em;
+  cursor: default;
+}
+
+.settings__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.settings__label:hover, .settings__label:focus-within {
+  text-decoration: underline;
+}
+
+.settings__radio {
+  transform: scale(0);
+}
+
+.settings__radio:checked + .settings__custom-radio {
+  background-image: linear-gradient(to right bottom, #ffffff 0%, #c40c21 45%);
+}
+
+.settings__custom-radio {
+  width: 22px;
+  height: 22px;
+  border-radius: 100px;
+  border: 1px solid #c40c21;
+  background-color: transparent;
+  transform: translateX(-10px);
+}
+
+.settings__difficulty {
+  font-size: 2em;
+}
+
+.settings__button {
+  cursor: pointer;
+  color: #c40c21;
+  background-color: transparent;
+  border: none;
+  margin-top: 15px;
+  font-size: 3em;
+}
+
+.ingame {
+  display: grid;
+  grid-template-columns: 640px auto;
+  height: 640px;
+}
+
+.ingame__top-row {
+  height: 150px;
+  margin-top: 168px;
+  margin-left: 168px;
+}
+
+.ingame__bottom-row {
+  margin-left: 168px;
+}
+
+.ingame__button {
+  width: 150px;
+  height: 150px;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+}
+
+.ingame__button:hover,
+.ingame__button_play {
+  opacity: 1;
+}
+
+.ingame__button_red {
+  background-color: red;
+  border-top-left-radius: 50%;
+}
+
+.ingame__button_yellow {
+  background-color: yellow;
+  border-top-right-radius: 50%;
+}
+
+.ingame__button_green {
+  background-color: green;
+  border-bottom-right-radius: 50%;
+}
+
+.ingame__button_blue {
+  background-color: blue;
+  border-bottom-left-radius: 50%;
+}
+
+.ingame__aside {
+  background-color: #bbb;
+  height: 100%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 2rem;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #c40c21;
+}
+
+.game-over {
+  padding-top: 150px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #c40c21;
+  font-size: 4rem;
+}
+
+.game-over__button {
+  margin-top: 150px !important;
+  cursor: pointer;
+  color: #c40c21;
+  background-color: transparent;
+  border: none;
+  margin-top: 15px;
+  font-size: 2rem;
+}
+
+.game-over__button:hover {
+  text-decoration: underline;
+}
+
+
+
+/*# sourceMappingURL=style.css.map */

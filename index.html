@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Norican&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+    <title>Simon the Game</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <script>
+        const app = Vue.createApp({
+            template: `<div class="game-screen">
+            <component :is="currentGamePage" :game="game" @init="changePage(1)" @set_difficulty="changePage(2, $event)" @game_over="changePage(3)"></component>
+                </div>`,
+
+            data() {
+                return {
+                    pageIndex: 0,
+                    game: null
+                }
+            },
+            methods: {
+                // Possibly needs improving
+                changePage(index, attr = undefined) {
+                    if (attr !== null) {
+                        if (attr !== undefined) {
+                            this.game = new Game(attr)
+                        }
+                        this.pageIndex = index
+                    }
+                }
+            },
+            computed: {
+                currentGamePage() {
+                    switch (this.pageIndex) {
+                        case 0: return 'StartPage'
+                        case 1: return 'Settings'
+                        case 2: return 'InGame'
+                        case 3: return 'GameOver'
+                    }
+                }
+            },
+        })
+    </script>
+    <script src="components/StartPage.js"></script>
+    <script src="components/Settings.js"></script>
+    <script src="components/InGame.js"></script>
+    <script src="components/GameOver.js"></script>
+    <script src="objects/Game.js"></script>
+    <script>
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
