@@ -1,4 +1,4 @@
-class Game {
+export default class Game {
     constructor(difficulty) {
         this.difficulty = difficulty
         this.delay = this._setDelay()
